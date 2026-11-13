@@ -1975,6 +1975,12 @@
         }
 
         // 7. Scelta pronome nel Modulo 2
+        const pronounBtn = target.closest('[data-action="choose-pronoun"]');
+        if (pronounBtn && !pronounBtn.disabled) {
+          handlePronounChoice(pronounBtn.getAttribute("data-pronoun"));
+          return;
+        }
+
         // 8. Selezione tessera dal banco alla risposta
         const selectTileBtn = target.closest('[data-action="select-tile"]');
         if (selectTileBtn && !selectTileBtn.disabled) {
